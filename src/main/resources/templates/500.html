@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style >
+        .test-tr {
+            background-color:#4cae4c;
+        }
+        .test-tre{
+            background-color:#d59392;
+        }
+    </style>
+</head>
+<body>
+
+<hi th:text="${errorMap['javax.servlet.error.status_code']}"></hi>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description </th>
+    </tr>
+    <tr th:each="err:${errorMap}"  th:classappend="${errStat.odd}? 'test-tr':'test-tre'">
+        <td th:text="${err.key}"></td>
+        <td th:text="${err.value}"></td>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>
