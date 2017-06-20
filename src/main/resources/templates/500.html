@@ -13,14 +13,19 @@
     </style>
 </head>
 <body>
-
+<!-- 通过key得到value -->
 <hi th:text="${errorMap['javax.servlet.error.status_code']}"></hi>
+
+status:<hi th:text="${errorMap['status']}"></hi>
+map size:<hi th:text="${#maps.size(errorMap)}"></hi>
+
 <table>
     <thead>
     <tr>
         <th>Name</th>
         <th>Description </th>
     </tr>
+    <!-- 迭代这个map -->
     <tr th:each="err:${errorMap}"  th:classappend="${errStat.odd}? 'test-tr':'test-tre'">
         <td th:text="${err.key}"></td>
         <td th:text="${err.value}"></td>
