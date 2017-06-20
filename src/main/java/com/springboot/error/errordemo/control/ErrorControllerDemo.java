@@ -43,7 +43,7 @@ public class ErrorControllerDemo implements ErrorController {
     }
 
     /**
-     * 后台java抛异常
+     * 后台java抛异常,会forward到/error/500，这个方法会映射到
      */
     @RequestMapping(produces = "text/html",value = "/error/500")
     public String errorHtml500(HttpServletRequest request,
