@@ -59,7 +59,7 @@ public class ErrorControllerDemo implements ErrorController {
 //        map.addAttribute("errorMap",errorMap);
 
         //includeStackTrace 总是false，这样找不到stack trace ，抛出异常的时候不知道是哪行出的异常。
-        //Map<String, Object> model = getErrorAttributes(request, isIncludeStackTrace(request, MediaType.TEXT_HTML));
+        Map<String, Object> model = getErrorAttributes(request, isIncludeStackTrace(request, MediaType.TEXT_HTML));
         Map<String, Object> model1 = getErrorAttributes(request,true);
         map.addAttribute("errorMap",model1);
         return "500";
