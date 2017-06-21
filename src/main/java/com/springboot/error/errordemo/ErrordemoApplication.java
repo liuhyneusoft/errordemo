@@ -25,7 +25,7 @@ public class ErrordemoApplication {
 		});
 	}*/
 
-	/**
+	/**  自定义 异常处理
 	 *  HttpStatus.NOT_FOUND  请求一个不存在的地址，会forward到 /error/404，ErrorController 会有方法映射
 	 *  抛异常、返回500 ，会forward到 /error/500 ErrorController 会有方法映射
 	 */

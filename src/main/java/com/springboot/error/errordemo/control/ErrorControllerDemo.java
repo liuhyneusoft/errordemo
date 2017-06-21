@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -64,6 +65,14 @@ public class ErrorControllerDemo implements ErrorController {
         map.addAttribute("errorMap",model1);
         return "500";
     }
+
+
+    @RequestMapping(produces = "text/html",value = "/error")
+    public @ResponseBody  String err(HttpServletRequest request, HttpServletResponse response) {
+        return "haha error"; //对应templates/404.html
+    }
+
+
 
     private Map<String, Object> getErrorAttributes(HttpServletRequest request,
                                                    boolean includeStackTrace) {
